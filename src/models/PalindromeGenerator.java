@@ -11,12 +11,15 @@ public class PalindromeGenerator {
     public static String makePalindrome(String base){
         String pref = "";
         int i = base.length() - 1;
-        Stack<Character> stack = new Stack<Character>();
-        while(! Palindrome.isPalindrome(stack, pref + base)){
+        while(! Palindrome.isPalindrome(new Stack<Character>(), pref + base)){
             pref = pref + base.charAt(i);
             i --;
         }
         return pref + base;
+    }
+
+    public static void main(String[]args){
+        System.out.println(PalindromeGenerator.makePalindrome("acbbca"));
     }
 
 }
